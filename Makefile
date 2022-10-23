@@ -1,16 +1,16 @@
-all: DQtest DQarraytest
+all: BSTtest BSTtest2
 
-DQtest: DQtest.o  # test program for Deque class
-	g++ -Wall -o DQtest DQtest.o  
+BSTtest: BSTtest.o  # test program for BinarySearchTree class
+	g++ -Wall -o BSTtest BSTtest.o  
 
-DQarraytest: DQarraytest.o  # test program for Deque class
-	g++ -Wall -o DQarraytest DQarraytest.o  
+BSTtest2: BSTtest2.o  # test program for BinarySearchTree class
+	g++ -Wall -o BSTtest2 BSTtest2.o  
 
-DQtest.o: DQtest.cpp Deque.h dsexceptions.h
-	g++ -Wall -o DQtest.o -c DQtest.cpp 
+BSTtest.o: BSTtest.cpp BinarySearchTree.h dsexceptions.h
+	g++ -Wall -o BSTtest.o -c BSTtest.cpp 
 
-DQarraytest.o: DQarraytest.cpp Deque.h dsexceptions.h
-	g++ -Wall -o DQarraytest.o -c DQarraytest.cpp 
+BSTtest2.o: BSTtest2.cpp BinarySearchTree.h dsexceptions.h
+	g++ -Wall -o BSTtest2.o -c BSTtest2.cpp 
 
 clean:
-	rm -f DQtest DQarraytest *.o
+	rm -f BSTtest2 BSTtest2 *.o
