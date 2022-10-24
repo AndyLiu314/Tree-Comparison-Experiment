@@ -28,6 +28,8 @@ int main( )
         t.displayTree(); 
         cout << "Links:" << endl ;
         t.displayLinks(); 
+        cout << "Height: " << endl;
+        t.height();
     }
 
 /*

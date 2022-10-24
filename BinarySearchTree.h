@@ -144,6 +144,17 @@ class BinarySearchTree
         }
     }
 
+    int height(ostream & out = cout) const {
+        if (isEmpty())
+            out << "Empty tree" << endl;
+        else{
+            int ht = height(root, out);
+            out << ht << endl;
+            return ht;
+        }
+        return 0;
+    }
+
     /**
      * Make the tree logically empty.
      */
@@ -370,6 +381,21 @@ class BinarySearchTree
             displayLinks( left, depth+1, out );
             displayLinks( right, depth+1, out );
         }
+    }
+
+    int height(BinaryNode *t, ostream & out) const 
+    {
+        if (t != nullptr){
+            int heightL = height(t->left, out);
+            int heightR = height(t->right, out);
+
+            if (heightL>heightR){
+                return heightL + 1;
+            } else {
+                return heightR + 1;
+            }
+        }
+        return 0;
     }
 
 
