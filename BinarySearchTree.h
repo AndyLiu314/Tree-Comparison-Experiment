@@ -157,8 +157,14 @@ class BinarySearchTree
 
     int depth(const Comparable & x) const {
         int dp = depth(x, root);
-        if (dp == -1){
+
+        if (isEmpty()){
+            cout << "Empty tree" << endl;
+            return 0;
+
+        } else if (contains(x, root) == false){
             cout << "BST does not contain: " << x << endl;
+            cout << "Depth of Search: " << dp << endl;
             return -1;
         } 
         cout << dp << endl;
@@ -413,7 +419,9 @@ class BinarySearchTree
         if (t != nullptr){
             if ((t->element == x) || (NodeDepth = depth(x, t->left)) >= 0 || (NodeDepth = depth(x, t->right)) >= 0) {
                 return NodeDepth + 1;
-            }
+            } //else {
+                //return NodeDepth + 1;
+            //}
             return NodeDepth;
         }
         return -1;

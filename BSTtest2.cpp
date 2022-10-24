@@ -19,8 +19,17 @@ int main( )
     for( i = 1 ; i <= NUMS ; i++ ){
         key = (key + GAP) % CAP ;
         t.insert( key );
-    }
+    } 
 
+    BinarySearchTree<int> t2;
+    //t2.insert(2); 
+    //t2.insert(3); 
+    //t2.insert(4); 
+    //t2.height();
+    //t2.depth(2);
+    //t2.displayLinks();
+
+    
     if( NUMS < 40 ){
         cout << "Keys:" << endl ;
         t.printTree( );
