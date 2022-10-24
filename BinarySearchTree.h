@@ -155,6 +155,16 @@ class BinarySearchTree
         return 0;
     }
 
+    int depth(const Comparable & x) const {
+        int dp = depth(x, root);
+        if (dp == -1){
+            cout << "BST does not contain: " << x << endl;
+            return -1;
+        } 
+        cout << dp << endl;
+        return dp;
+    }
+
     /**
      * Make the tree logically empty.
      */
@@ -395,7 +405,34 @@ class BinarySearchTree
                 return heightR + 1;
             }
         }
-        return 0;
+        return -1;
+    }
+    
+    int depth(const Comparable & x, BinaryNode *t ) const {
+        int NodeDepth = -1;
+        if (t != nullptr){
+            if ((t->element == x) || (NodeDepth = depth(x, t->left)) >= 0 || (NodeDepth = depth(x, t->right)) >= 0) {
+                return NodeDepth + 1;
+            }
+            return NodeDepth;
+        }
+        return -1;
+        
+
+        /*
+        if (t != nullptr){
+            if (contains(x, t)){
+                int NodeDepth = -1;
+                if ((t->element == x) || (NodeDepth = depth(x, t->left)) >= 0 || (NodeDepth = depth(x, t->right)) >= 0) {
+                    return NodeDepth + 1;
+                }
+                return NodeDepth;
+            } else {
+                cout << "BST does not contain node x" << endl;
+                return -1;
+            }
+        }
+        return -1;*/
     }
 
 

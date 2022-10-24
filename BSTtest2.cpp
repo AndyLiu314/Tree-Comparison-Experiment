@@ -30,6 +30,8 @@ int main( )
         t.displayLinks(); 
         cout << "Height: " << endl;
         t.height();
+        cout << "Depth of Node 8: " << endl;
+        t.depth(8);
     }
 
 /*
