@@ -135,6 +135,15 @@ class BinarySearchTree
             displayTree( root, 0, out );
     }
 
+    void displayLinks( ostream & out = cout ) const 
+    {
+        if (isEmpty())
+            out << "Empty tree" << endl;
+        else {
+            displayLinks( root, 0, out );
+        }
+    }
+
     /**
      * Make the tree logically empty.
      */
@@ -344,6 +353,19 @@ class BinarySearchTree
             out << t->element << endl;
             displayTree( t->left, depth+1, out );
             displayTree( t->right, depth+1, out );
+        }
+    }
+
+    void displayLinks( BinaryNode *t, int depth, ostream & out ) const
+    {
+        const int SHIFT = 4 ;
+        if( t != nullptr )
+        {
+            for( int i = 0 ; i < SHIFT*depth ; i++ ){ out << " " ; }
+            out << t->element << endl;
+            out << &t << endl;
+            displayLinks( t->left, depth+1, out );
+            displayLinks( t->right, depth+1, out );
         }
     }
 
