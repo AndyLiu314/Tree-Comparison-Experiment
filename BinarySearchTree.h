@@ -356,16 +356,19 @@ class BinarySearchTree
         }
     }
 
+    //done
     void displayLinks( BinaryNode *t, int depth, ostream & out ) const
     {
         const int SHIFT = 4 ;
         if( t != nullptr )
         {
             for( int i = 0 ; i < SHIFT*depth ; i++ ){ out << " " ; }
-            out << t->element << endl;
-            out << &t << endl;
-            displayLinks( t->left, depth+1, out );
-            displayLinks( t->right, depth+1, out );
+            BinaryNode* left = t->left;
+            BinaryNode* right = t->right;
+            out << t->element << ") @:" << t;
+            out << "  L:" << left << " R:" << right << endl;
+            displayLinks( left, depth+1, out );
+            displayLinks( right, depth+1, out );
         }
     }
 
