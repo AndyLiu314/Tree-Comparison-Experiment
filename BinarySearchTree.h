@@ -156,18 +156,25 @@ class BinarySearchTree
     }
 
     int depth(const Comparable & x) const {
-        int dp = depth(x, root);
-
         if (isEmpty()){
             cout << "Empty tree" << endl;
             return 0;
 
         } else if (contains(x, root) == false){
+            int dp = searchdepth(x, root);
             cout << "BST does not contain: " << x << endl;
             cout << "Depth of Search: " << dp << endl;
             return -1;
-        } 
-        cout << dp << endl;
+
+        } else {
+            int dp = depth(x, root);
+            cout << dp << endl;
+            return dp;
+        }
+    }
+
+    int searchdepth(const Comparable & x) const {
+        int dp = searchdepth(x, root);
         return dp;
     }
 
@@ -419,28 +426,33 @@ class BinarySearchTree
         if (t != nullptr){
             if ((t->element == x) || (NodeDepth = depth(x, t->left)) >= 0 || (NodeDepth = depth(x, t->right)) >= 0) {
                 return NodeDepth + 1;
-            } //else {
-                //return NodeDepth + 1;
-            //}
+            }
             return NodeDepth;
         }
         return -1;
-        
+    }
 
-        /*
-        if (t != nullptr){
-            if (contains(x, t)){
-                int NodeDepth = -1;
-                if ((t->element == x) || (NodeDepth = depth(x, t->left)) >= 0 || (NodeDepth = depth(x, t->right)) >= 0) {
-                    return NodeDepth + 1;
+    int searchdepth (const Comparable & x, BinaryNode *t) const {
+        int dp = 0;
+        while (t != nullptr) {
+            if (x < t->element) {
+                if (dp == 0){
+                    t = t -> left;
+                    dp++;
+                } else {
+                    if (t->left != nullptr){
+                        t = t->left;
+                        dp++;
+                    } else {
+                        return dp;
+                    }
                 }
-                return NodeDepth;
-            } else {
-                cout << "BST does not contain node x" << endl;
-                return -1;
+            } else if (x > t->element) {
+                t = t -> right;
+                dp++;
             }
         }
-        return -1;*/
+        return dp; 
     }
 
 
