@@ -40,7 +40,7 @@ int main( )
         cout << "Height: " << endl;
         t.height();
         cout << "Depth of Node 8: " << endl;
-        t.depth(8);
+        t.depth(8); 
     }
 
 /*
