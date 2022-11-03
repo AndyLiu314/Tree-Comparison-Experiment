@@ -11,17 +11,22 @@ int main( ) {
     BinarySearchTree<int> t1; // Tall and Skinny
     t1.insert(1); 
     t1.insert(2); 
+    t1.insert(4); 
     t1.insert(5); 
+    t1.insert(7); 
     t1.insert(8); 
+    t1.insert(10); 
     t1.insert(11); 
     t1.insert(12); 
+    t1.insert(13); 
     t1.insert(14); 
     t1.insert(15); 
+    t1.insert(16); 
     t1.insert(17); 
     t1.insert(18); 
 
     BinarySearchTree<int> t2; // Wider and more efficient
-    int NUMS = 10;
+    int NUMS = 15;
     const int GAP  = 3 ;
     const int CAP  = 19;
     int i;
@@ -35,7 +40,7 @@ int main( ) {
 
     cout << "Start of Exp1" << endl;
 
-    // Test on first tree
+    // Test on overall time of first tree
     clock_t start, finish;
     start = clock();
 
@@ -50,7 +55,7 @@ int main( ) {
 
     double overall_time1 = elapsed_time(start, finish);
 
-    // Test on second tree
+    // Test on overall time of second tree
     start = clock();
 
     cout << "Links:" << endl ;
