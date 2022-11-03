@@ -44,7 +44,7 @@ int main( ) {
     cout << "Test Tree 3:" << endl;
     t2.displayTree();
     cout << "Expected Height Output: " << endl;
-    cout << "Empty Tree" << endl;
+    cout << "Empty tree" << endl;
     cout << "Actual Height Output: " << endl;
     t2.height();
 }

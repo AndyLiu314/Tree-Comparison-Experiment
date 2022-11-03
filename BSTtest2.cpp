@@ -26,10 +26,10 @@ int main( )
     //t2.insert(3); 
     //t2.insert(4); 
     //t2.height();
-    t2.depth(3);
+    //t2.depth(3);
     //t2.displayLinks();
 
-    /*
+    
     if( NUMS < 40 ){
         cout << "Keys:" << endl ;
         t.printTree( );
@@ -41,7 +41,7 @@ int main( )
         t.height();
         cout << "Depth of Node 8: " << endl;
         t.depth(8);
-    }*/
+    }
 
 /*
     for( i = 1; i < NUMS; i+= 2 )
