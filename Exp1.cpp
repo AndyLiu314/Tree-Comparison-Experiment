@@ -133,4 +133,8 @@ int main( ) {
 
     cout << "Time taken for depth of last node in the second tree: " << endl;
     cout << single_time2 << endl;
+
+    cout << endl;
+    cout << "---------- Tests Finished ----------" << endl;
+    cout << endl;
 }
