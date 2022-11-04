@@ -30,10 +30,10 @@ BSTtest2.o: BSTtest2.cpp BinarySearchTree.h dsexceptions.h
 DLtest.o: DLtest.cpp BinarySearchTree.h AvlTree.h dsexceptions.h
 	g++ -Wall -o DLtest.o -c DLtest.cpp 
 
-Htest.o: Htest.cpp BinarySearchTree.h dsexceptions.h
+Htest.o: Htest.cpp BinarySearchTree.h AvlTree.h dsexceptions.h
 	g++ -Wall -o Htest.o -c Htest.cpp 
 
-Dtest.o: Dtest.cpp BinarySearchTree.h dsexceptions.h
+Dtest.o: Dtest.cpp BinarySearchTree.h AvlTree.h dsexceptions.h
 	g++ -Wall -o Dtest.o -c Dtest.cpp 
 
 Exp1.o: Exp1.cpp BinarySearchTree.h dsexceptions.h
