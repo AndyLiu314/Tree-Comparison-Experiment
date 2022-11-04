@@ -6,10 +6,10 @@ using namespace std;
 int main( )
 {
     BinarySearchTree<int> t;
-//    int NUMS = 400000;
-    int NUMS = 10;
+    int NUMS = 100;
+    //int NUMS = 10;
     const int GAP  = 3 ;
-    const int CAP  = 19;
+    const int CAP  = 100;
     int i;
     int key ;
 
@@ -21,27 +21,21 @@ int main( )
         t.insert( key );
     } 
 
-    BinarySearchTree<int> t2;
-    t2.insert(2); 
-    //t2.insert(3); 
-    //t2.insert(4); 
-    //t2.height();
-    //t2.depth(3);
-    //t2.displayLinks();
-
     
-    if( NUMS < 40 ){
+    //if( NUMS < 40 ){
         cout << "Keys:" << endl ;
         t.printTree( );
         cout << "Tree:" << endl ;
         t.displayTree(); 
+        t.height();
+        /*
         cout << "Links:" << endl ;
         t.displayLinks(); 
         cout << "Height: " << endl;
         t.height();
         cout << "Depth of Node 8: " << endl;
-        t.depth(8); 
-    }
+        t.depth(8); */
+    //}
 
 /*
     for( i = 1; i < NUMS; i+= 2 )
