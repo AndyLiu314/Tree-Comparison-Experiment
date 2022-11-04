@@ -114,6 +114,14 @@ class AvlTree
             printTree( root );
     }
 
+    void displayLinks () const {
+        if (isEmpty())
+            cout << "Empty tree" << endl;
+        else {
+            displayLinks(root, 0);
+        }
+    }
+
     /**
      * Make the tree logically empty.
      */
@@ -334,6 +342,20 @@ class AvlTree
             printTree( t->left );
             cout << t->element << endl;
             printTree( t->right );
+        }
+    }
+
+    void displayLinks (AvlNode *t, int depth) const {
+        const int SHIFT = 4 ;
+        if( t != nullptr )
+        {
+            for( int i = 0 ; i < SHIFT*depth ; i++ ){ cout << " " ; }
+            AvlNode* left = t->left;
+            AvlNode* right = t->right;
+            cout << t->element << ") @:" << t;
+            cout << "  L:" << left << " R:" << right << endl;
+            displayLinks( left, depth+1 );
+            displayLinks( right, depth+1 );
         }
     }
 
