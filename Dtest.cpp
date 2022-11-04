@@ -58,7 +58,7 @@ int main( ) {
     cout << "Test Case: Node Not Found" << endl;
     cout << "Expected Depth Output: " << endl;
     cout << "BST does not contain: 3" << endl;
-    cout << "Depth of Search: 1" << endl;
+    cout << "Depth of Search: 0" << endl;
     cout << endl;
     cout << "Actual Depth Output: " << endl;
     t1.depth(3);
@@ -74,4 +74,54 @@ int main( ) {
     cout << endl;
     cout << "Actual Depth Output: " << endl;
     t2.depth(3);
+    cout << endl;
+
+    // Testing for AVLtree
+    AvlTree<int> a1;
+    for (int l = 0; l<10; l++){
+        a1.insert(l); 
+    }
+    
+    if( NUMS < 40 ){
+        cout << "Test AVLtree 1:" << endl; //Test for a filled tree
+        a1.displayLinks(); 
+        cout << endl;
+
+        cout << "Test Case: Root Node " << endl;
+        cout << "Expected Depth Output: " << endl;
+        cout << "0" << endl;
+        cout << "Actual Depth Output: " << endl;
+        a1.depth(3);
+        cout << endl;
+
+        cout << "Test Case: Non-root Node " << endl;
+        cout << "Expected Depth Output: " << endl;
+        cout << "2" << endl;
+        cout << "Actual Depth Output: " << endl;
+        a1.depth(5);
+        cout << endl;
+
+        cout << "Test Case: Node Not Found" << endl;
+        cout << "Expected Depth Output: " << endl;
+        cout << "AVLtree does not contain: 18" << endl;
+        cout << "Depth of Search: 3" << endl;
+        cout << endl;
+        cout << "Actual Depth Output: " << endl;
+        a1.depth(18);
+        cout << endl;
+    }
+
+    AvlTree<int> a2; // Empty AVLtree
+    cout << "Test AVLtree 2:" << endl;
+    cout << endl;
+
+    cout << "Test Case: Empty Tree" << endl;
+    cout << "Expected Depth Output: " << endl;
+    cout << "Empty tree" << endl;
+    cout << endl;
+    cout << "Actual Depth Output: " << endl;
+    a2.depth(3);
+    cout << endl;
+
+    cout << "---------- End of Dtest ----------" <<endl;
 }

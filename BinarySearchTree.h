@@ -449,7 +449,11 @@ class BinarySearchTree
                 }
             } else if (x > t->element) {
                 t = t -> right;
-                dp++;
+                if (t == nullptr){
+                    return dp;
+                } else {
+                    dp++;
+                }
             }
         }
         return dp; 

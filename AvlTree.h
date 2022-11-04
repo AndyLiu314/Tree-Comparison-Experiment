@@ -134,6 +134,29 @@ class AvlTree
         return 0;    
     }
 
+    int depth(const Comparable & x) const {
+        if (isEmpty()){
+            cout << "Empty tree" << endl;
+            return 0;
+
+        } else if (contains(x, root) == false){
+            int dp = searchdepth(x, root);
+            cout << "BST does not contain: " << x << endl;
+            cout << "Depth of Search: " << dp << endl;
+            return -1;
+
+        } else {
+            int dp = depth(x, root);
+            cout << dp << endl;
+            return dp;
+        }
+    }
+
+    int searchdepth(const Comparable & x) const {
+        int dp = searchdepth(x, root);
+        return dp;
+    }
+
     /**
      * Make the tree logically empty.
      */
@@ -369,6 +392,44 @@ class AvlTree
             displayLinks( left, depth+1 );
             displayLinks( right, depth+1 );
         }
+    }
+
+    int depth(const Comparable & x, AvlNode *t ) const {
+        int NodeDepth = -1;
+        if (t != nullptr){
+            if ((t->element == x) || (NodeDepth = depth(x, t->left)) >= 0 || (NodeDepth = depth(x, t->right)) >= 0) {
+                return NodeDepth + 1;
+            }
+            return NodeDepth;
+        }
+        return -1;
+    }
+
+    int searchdepth (const Comparable & x, AvlNode *t) const {
+        int dp = 0;
+        while (t != nullptr) {
+            if (x < t->element) {
+                if (dp == 0){
+                    t = t -> left;
+                    dp++;
+                } else {
+                    if (t->left != nullptr){
+                        t = t->left;
+                        dp++;
+                    } else {
+                        return dp;
+                    }
+                }
+            } else if (x > t->element) {
+                t = t -> right;
+                if (t == nullptr){
+                    return dp;
+                } else {
+                    dp++;
+                }
+            }
+        }
+        return dp; 
     }
 
     /**
