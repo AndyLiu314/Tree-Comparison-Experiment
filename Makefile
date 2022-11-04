@@ -27,7 +27,7 @@ BSTtest.o: BSTtest.cpp BinarySearchTree.h dsexceptions.h
 BSTtest2.o: BSTtest2.cpp BinarySearchTree.h dsexceptions.h
 	g++ -Wall -o BSTtest2.o -c BSTtest2.cpp 
 
-DLtest.o: DLtest.cpp BinarySearchTree.h dsexceptions.h
+DLtest.o: DLtest.cpp BinarySearchTree.h AvlTree.h dsexceptions.h
 	g++ -Wall -o DLtest.o -c DLtest.cpp 
 
 Htest.o: Htest.cpp BinarySearchTree.h dsexceptions.h
