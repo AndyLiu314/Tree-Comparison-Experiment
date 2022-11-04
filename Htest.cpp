@@ -48,4 +48,39 @@ int main( ) {
     cout << "Empty tree" << endl;
     cout << "Actual Height Output: " << endl;
     t2.height();
+    cout << endl;
+
+    // Testing for AVLtree
+    AvlTree<int> a1;
+    for (int l = 0; l<10; l++){
+        a1.insert(l); 
+    }   
+    cout << "Test AVltree 1:" << endl; //Test for a filled tree
+    a1.displayLinks(); 
+    cout << "Expected Height Output: " << endl;
+    cout << "3" << endl;
+    cout << "Actual Height Output: " << endl;
+    a1.height();
+    cout << endl;
+
+    AvlTree<int> a2;
+    a2.insert(2);
+    cout << "Test AVLtree 2:" << endl;
+    a2.displayLinks();
+    cout << "Expected Height Output: " << endl;
+    cout << "0" << endl;
+    cout << "Actual Height Output: " << endl;
+    a2.height();
+    cout << endl;
+
+    AvlTree<int> a3;
+    cout << "Test AVLtree 3:" << endl;
+    a3.displayLinks();
+    cout << "Expected Height Output: " << endl;
+    cout << "Empty tree" << endl;
+    cout << "Actual Height Output: " << endl;
+    a3.height();
+    cout << endl;
+
+    cout << "---------- End of Htest ----------" <<endl;
 }

@@ -122,6 +122,18 @@ class AvlTree
         }
     }
 
+    int height () const {
+        if (isEmpty())
+            cout << "Empty tree" << endl;
+
+        else {
+            int ht = height(root);
+            cout << ht << endl;
+            return ht;
+        }
+        return 0;    
+    }
+
     /**
      * Make the tree logically empty.
      */
