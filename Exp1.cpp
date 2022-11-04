@@ -111,11 +111,11 @@ int main( ) {
     cout << overall_time2 << endl;
     cout << endl;
 
-    cout << "Average time taken for the each membership test of the first tree: " << endl;
+    cout << "Average time taken for each membership test of the first tree: " << endl;
     cout << avgtime1 << endl;
     cout << endl;
 
-    cout << "Average time taken for the each membership test of the second tree: " << endl;
+    cout << "Average time taken for each membership test of the second tree: " << endl;
     cout << avgtime2 << endl;
     cout << endl;
 
